@@ -1,0 +1,19 @@
+<%= render partial: "shared/errors" %>
+<%= render partial: "shared/messages" %>
+<h1>lyrics for '<%= @track.name %>'</h1>
+  from the album <%= link_to @track.album.name, album_url(@track.album) %><br><br>
+  <p> <%= ugly_lyrics(@track.lyrics) %> </p>
+  <br><br>
+  <h2>notes on this track</h2>
+  <% if @track.notes %>
+  <% @track.notes.each do |note| %>
+    <%= render "notes/note", note: note  %>
+    <% end %>
+  <% end %>
+  <br><br>
+  <%= render "notes/form", track_id: @track.id %>
+  <br>
+  <br>
+  <%= link_to "edit", edit_track_url(@track) %>
+  <br>
+  <%= link_to "delete", track_url(@track), method: :destroy %>

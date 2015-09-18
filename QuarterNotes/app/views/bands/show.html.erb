@@ -1,0 +1,14 @@
+<%= render partial: "shared/errors" %>
+<%= render partial: "shared/messages" %>
+<h1><%= @band.name %></h1>
+<% @band.albums.each do |album| %>
+<li><%= link_to album.name, album_url(album) %></li>
+<% end %>
+<br><br>
+<%= link_to "bands index", bands_url %>
+<br><br>
+<%= link_to "edit", edit_band_url(@band) %>
+<br>
+<%= link_to "add an album", new_band_album_url(@band) %>
+<br>
+<%= button_to "delete", band_url(@band), method: :delete %>

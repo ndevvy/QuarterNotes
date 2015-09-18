@@ -1,0 +1,3 @@
+<%= render partial: "shared/errors" %>
+<%= render partial: "shared/messages" %>
+<%= render 'form', action: :new, album: @album, current_band: Band.find(params[:band_id]) %>
