@@ -1,6 +1,6 @@
 <div>
   <p><%= note.body %></p>
-  -----note added by <strong><%= note.user.email %></strong>
+  <small>-----note added by <strong><%= note.user.email %></strong></small>
   <% if note.user_id == current_user.id %>
   <%= button_to 'delete note', note_url(note), method: :delete %>
   <% end %>

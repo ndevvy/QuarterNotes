@@ -22,6 +22,7 @@ before_action :must_be_logged_in
 
   def show
     @track = Track.find(params[:id])
+    @track_notes = Track.includes(:notes).where("tracks.id = #{@track.id}")
   end
 
   def update

@@ -1,23 +1,27 @@
-<% action_url = (action == :new) ? albums_url : album_url(@album) %>
-<% method = (action == :new) ? :post : :patch %>
-<% text = (action == :new) ? "create" : "edit" %>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-4">
+    <% action_url = (action == :new) ? albums_url : album_url(@album) %>
+    <% method = (action == :new) ? :post : :patch %>
+    <% text = (action == :new) ? "create" : "edit" %>
 
-<form action="<%= action_url %>" method="post">
-  <input type="hidden" name="_method" value="<%= method %>">
-  <input type="hidden"
-         name="authenticity_token"
-         value="<%= form_authenticity_token %>">
-  <label id="name">album name</label>
-  <input type="text" name="album[name]" id="name" value="<%= @album.name %>">
-  <br>
-  <label id="band">recording artist</label>
-  <select name="album[band_id]" id="band">
-    <% Band.all.each do |band| %>
-    <option
-      <%= band.id == current_band.id ? "selected" : "" %>
-      value="<%= band.id %>">
-      <%= band.name %> </option>
-  <% end %>
+    <form action="<%= action_url %>" method="post">
+      <input type="hidden" name="_method" value="<%= method %>">
+      <input type="hidden"
+             name="authenticity_token"
+             value="<%= form_authenticity_token %>">
+      <label id="name">album name</label>
+      <input type="text" name="album[name]" id="name" value="<%= @album.name %>">
+      <br>
+      <label id="band">recording artist</label>
+      <select name="album[band_id]" id="band">
+        <% Band.all.each do |band| %>
+        <option
+          <%= band.id == current_band.id ? "selected" : "" %>
+          value="<%= band.id %>">
+          <%= band.name %> </option>
+      <% end %>
 
-  <input type="submit" value="<%= text %>">
-</form>
+      <input type="submit" value="<%= text %>">
+    </form>
+  </div>
+</div>

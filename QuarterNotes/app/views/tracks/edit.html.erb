@@ -1,2 +1,2 @@
 
-<%= render 'form', action: :edit, track: @track, current_album: Album.find(params[:album_id]) %>
+<%= render 'form', action: :edit, track: @track, current_album: Album.find(@track.album) %>
