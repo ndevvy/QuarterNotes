@@ -24,16 +24,17 @@
 
   <% if logged_in? %>
   <div class="collapse navbar-collapse" id="collapse-menu">
+      quartrNotes
     <ul class="nav navbar-nav pull-right">
       <li> <%= link_to "bands", bands_url %> </a></li>
 
       <li> <%= link_to "log out", session_url, method: :delete %></li>
-      <li> logged in as <%= current_user.email %> </li>
     </ul>
   </div>
 
     </div>
       </nav>
+      </div>
       <% end %>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-4">
@@ -46,6 +47,10 @@
 
         </div>
       </div>
+      <div class="row">
+        <div class="col-xs-2 col-xs-offset-1">
+        <small>logged in as <%= current_user.email %></small>
+        </div>
 </body>
 <br><br>
 </html>

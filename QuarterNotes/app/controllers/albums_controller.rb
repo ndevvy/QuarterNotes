@@ -23,6 +23,7 @@ before_action :must_be_logged_in
 
   def show
     @album = Album.find(params[:id])
+    @album_with_tracks = Album.includes(:tracks).where("albums.id = #{@album.id}")
   end
 
   def update

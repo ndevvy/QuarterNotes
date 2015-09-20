@@ -24,6 +24,7 @@ before_action :must_be_logged_in
 
   def show
     @band = Band.find(params[:id])
+    @band_with_albums = Band.includes(:albums).where("bands.id = #{@band.id}")
   end
 
   def update
