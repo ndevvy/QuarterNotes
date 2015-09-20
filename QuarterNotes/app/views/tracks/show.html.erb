@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row container">
   <div class="col-xs-6 col-xs-offset-3">
     <div class="jumbotron">
       <h2>lyrics for '<%= @track.name %>'</h1>
@@ -15,7 +15,7 @@
         <%= render "notes/form", track_id: @track.id %>
         <br>
         <br>
-        <%= link_to "edit", edit_track_url(@track) %>
+        <%= link_to "edit / add lyrics", edit_track_url(@track) %>
         <br>
         <%= link_to "delete", track_url(@track), method: :destroy %>
       </div>
