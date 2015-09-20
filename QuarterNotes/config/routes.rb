@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'bands#index'
+
   resources :users, only: [:create, :new, :show]
   resource :session, only: [:new, :create, :destroy]
 
