@@ -1,5 +1,3 @@
-<%= render partial: "shared/errors" %>
-<%= render partial: "shared/messages" %>
 
 <h1><%= @album.name %></h1>
 recorded by: <%= link_to @album.band.name, band_url(@album.band) %> <br>

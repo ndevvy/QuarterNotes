@@ -1,17 +1,21 @@
-<%= render partial: "shared/errors" %>
-<%= render partial: "shared/messages" %>
 
-<h1>sign in</h1>
-<form action="<%= session_url %>" method="post">
-  <input type="hidden"
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4">
+    <h1>sign in</h1>
+      <div class="form-group">
+        <form action="<%= session_url %>" method="post">
+        <input type="hidden"
          name="authenticity_token"
          value="<%= form_authenticity_token %>">
-  <p><label for="email">email</label>
-  <input type="text" id="email" name="user[email]">
-  </p>
-  <p>
-  <label for="password">password</password>
-  <input type="password" id="password" name="user[password]">
-  </p>
-  <input type="submit" value="sign in">
-</form>
+        <p><label for="email">email</label>
+        <input type="text" id="email" name="user[email]" class="form-control">
+        </p>
+        <p>
+        <label for="password">password</password>
+        <input type="password" id="password" name="user[password]" class="form-control">
+        </p>
+      <input type="submit" value="sign in">
+    </form>
+    </div>
+  </div>
+</div>

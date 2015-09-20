@@ -1,13 +1,23 @@
 
+
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+
 <h1>sign up</h1>
-<form action="<%= users_url %>", method="post">
-  <input type="hidden"
-         name="authenticity_token"
-         value="<%= form_authenticity_token %>">
-  <p><label name="email">email:</label>
-    <input type="text" name="user[email]" id="email"></p>
-  <p><label name="password">password:</label>
-    <input type="password" name="user[password]" id="password">
-  </p>
-  <input type="submit" value="sign up">
-</form>
+  <div class="form-group">
+
+    <form action="<%= users_url %>", method="post">
+      <input type="hidden"
+             name="authenticity_token"
+             value="<%= form_authenticity_token %>">
+      <p><label name="email">email:</label>
+        <input type="text" name="user[email]" id="email" class="form-control"></p>
+      <p><label name="password">password:</label>
+        <input type="password" name="user[password]" id="password" class="form-control">
+      </p>
+      <input type="submit" value="do it" class="form-control">
+    </form>
+
+</div>
+</div>
+</div>

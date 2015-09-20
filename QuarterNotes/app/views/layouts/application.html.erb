@@ -2,21 +2,50 @@
 <html>
 <head>
   <title>QuarterNotes</title>
-  <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 </head>
 <body>
+  <nav class="navbar navbar-default">
+<div class="container-fluid">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#collapse-menu"
+            aria-expanded="false">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <% if logged_in? %>
+  <div class="collapse navbar-collapse" id="collapse-menu">
+    <ul class="nav navbar-nav pull-right">
+      <li> <%= link_to "bands", bands_url %> </a></li>
+
+      <li> <%= link_to "log out", session_url, method: :delete %></li>
+      <li> logged in as <%= current_user.email %> </li>
+    </ul>
+  </div>
+
+    </div>
+      </nav>
+      <% end %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-4">
+
+
   <%= render partial: "shared/errors" %>
   <%= render partial: "shared/messages" %>
 
 <%= yield %>
 
+        </div>
+      </div>
 </body>
 <br><br>
-  <% if logged_in? %>
-  logged in as <%= current_user.email %>
-  <%= button_to "log out", session_url, method: :delete %>
-  <% end %>
 </html>
